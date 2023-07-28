@@ -120,7 +120,7 @@ export const TeamData = [
 ];
 export const RoadmapData = [
   {
-    imgSrc: "/assets/white_road1.svg",
+    imgSrc: "/assets/road1.svg",
     data: [
       { lineData: ["dummy", "dummy", "dummy"] },
       { lineData: ["dummy", "dummy", "dummy"] },
@@ -128,7 +128,7 @@ export const RoadmapData = [
     ],
   },
   {
-    imgSrc: "/assets/white_road2.svg",
+    imgSrc: "/assets/road2.svg",
     data: [
       { lineData: ["dummy", "dummy", "dummy"] },
       { lineData: ["dummy", "dummy", "dummy"] },

@@ -1,9 +1,8 @@
 import styled, { css } from "styled-components";
 import { useMediaQuery } from "react-responsive";
-import { Col, Row } from "react-bootstrap";
+import { Col, Row,Image } from "react-bootstrap";
 import Marquee from "react-fast-marquee";
 import Typewriter from "typewriter-effect";
-import { Image } from "react-bootstrap";
 import { H1, P, SpanHeading, HeadingAlt } from "./Typography";
 interface WrapperProps {
   width?: string;

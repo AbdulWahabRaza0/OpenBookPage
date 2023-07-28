@@ -84,12 +84,7 @@ export default function Home() {
             <Wrapper
               id="about"
               width="100%"
-              // bg="white"
-              // style={{
-              //   backgroundImage:
-              //     "linear-gradient(to bottom,rgba(185, 93, 93, 0.2), rgba(185, 93, 93, 0.4))",
-              // }}
-              // bg={"linear-gradient(to bottom right, #F5EDEA, #66302a)"}
+              
             >
               <Container pt="40px">
                 <Wrapper
@@ -317,7 +312,7 @@ export default function Home() {
               backgroundImage:
                 "linear-gradient(to bottom,rgba(185, 93, 93, 0.4), rgba(185, 93, 93, 0.1))",
             }}
-            mt={isResponsive ? "10%" : "0%"}
+            mt={isResponsive ? "0%" : "0%"}
             bg="white"
             width="100%"
             height="400px"
@@ -345,10 +340,10 @@ export default function Home() {
             </Wrapper>
           </Wrapper>
           <Wrapper
-            bg="white"
+            bg="black"
             style={{
               backgroundImage:
-                "linear-gradient(to bottom, #ffffff, transparent)",
+                "linear-gradient(to bottom, black, transparent)",
             }}
           >
             <Container>
@@ -377,6 +372,7 @@ export default function Home() {
                                       return (
                                         <>
                                           <Wrapper
+                                          fontColor="white !important"
                                             data-aos="flip-up"
                                             data-aos-duration={(
                                               2000 *
@@ -398,7 +394,7 @@ export default function Home() {
 
                         <Wrapper
                           position="absolute"
-                          style={{ top: 0, left: 0, zIndex: 100 }}
+                          style={{ top: 0, left: "20px", zIndex: 100 }}
                         >
                           {ResponsiveRoadMapData.left.data.map((val, index) => {
                             return (
@@ -408,6 +404,7 @@ export default function Home() {
                                     return (
                                       <>
                                         <Wrapper
+                                        fontColor="white !important"
                                           data-aos="flip-up"
                                           data-aos-duration={(
                                             2000 *
@@ -443,6 +440,7 @@ export default function Home() {
                               {obj.data.map((line, lineIndex) => {
                                 return (
                                   <Wrapper
+                                  fontColor="white"
                                     data-aos="flip-up"
                                     data-aos-duration={(
                                       2000 *
