@@ -339,6 +339,7 @@ export default function Home() {
                                     return (
                                       <>
                                         <Wrapper
+                                          fontColor="white !important"
                                           data-aos="flip-up"
                                           data-aos-duration={(
                                             2000 *
