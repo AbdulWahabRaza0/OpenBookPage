@@ -41,7 +41,6 @@ const H1 = styled.h1<Props>`
   ${(props) =>
     props.marqueed &&
     css`
-      // position: absolute;
       z-index: 999;
       white-space: nowrap;
       will-change: transform;
@@ -109,9 +108,9 @@ const A = styled.a<Props>`
 `;
 const HeadingAlt = styled.span<Props>`
   line-height: 130px;
-  font-size: ${(props) => (props.fontSize ? props.fontSize : "40px")};
+  font-size: ${(props) => (props.fontSize ? props.fontSize : "60px")};
   font-family: ${(props) =>
-    props.family ? props.family : "'Organeto','sans-serif'"};
+    props.family ? props.family : "'Montserrat', sans-serif"};
   color: transparent;
   -webkit-text-stroke: 2px #242a3b;
   -webkit-text-stroke-color: 2px #242a3b;
@@ -145,9 +144,13 @@ const HeadingAlt = styled.span<Props>`
     `}
 `;
 const SpanHeading = styled.span<Props>`
-  font-family: "Organeto", "sans-serif";
-  font-size: 40px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 53px;
   color: #db5c4d !important;
   font-weight: 700;
+  @media (max-width: 768px) {
+    font-size: 32px;
+    line-height: 32px;
+  }
 `;
 export { H1, H2, H3, P, A, HeadingAlt, SpanHeading };

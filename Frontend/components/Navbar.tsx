@@ -1,8 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Wrapper, useMediaQuery, Image } from "./Layout";
-import { PrimaryButton } from "./Buttons";
-import { A, P } from "./Typography";
+import { A } from "./Typography";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 const menuitems = [
@@ -35,16 +34,8 @@ const Navbar = () => {
     query: "(max-width: 752px)",
   });
   return (
-    <>
-      <Wrapper
-        width="100%"
-        // bg="white"
-        // style={{
-        //   backgroundImage:
-        //     "linear-gradient(to bottom,rgba(185, 93, 93, 0.2), rgba(185, 93, 93, 0.4))",
-        //   zIndex: 1000,
-        // }}
-      >
+    <React.Fragment>
+      <Wrapper width="100%">
         <Wrapper
           ps={isResponsive ? "30px" : "50px"}
           pe="3%"
@@ -52,7 +43,7 @@ const Navbar = () => {
           className="d-flex flex-row align-items-center justify-content-between"
         >
           <Image
-            src="/assets/black_logo.svg"
+            src="/assets/solid_logo.png"
             alt="playin logo"
             className="img-fluid"
             width={240}
@@ -70,7 +61,7 @@ const Navbar = () => {
             {open ? (
               <>
                 <Wrapper
-                  bg="#242a3b"
+                  bg="#100f0f"
                   width={isResponsive ? "90vw" : "auto"}
                   borderRadius="40px"
                   height={isResponsive ? "auto" : "60px"}
@@ -116,7 +107,7 @@ const Navbar = () => {
               </>
             ) : (
               <Wrapper
-                bg="#282834"
+                bg="#100f0f"
                 borderRadius="50%"
                 width="70px"
                 height="70px"
@@ -140,7 +131,7 @@ const Navbar = () => {
           </Wrapper>
         </Wrapper>
       </Wrapper>
-    </>
+    </React.Fragment>
   );
 };
 

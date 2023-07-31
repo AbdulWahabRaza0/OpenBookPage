@@ -14,7 +14,7 @@ export const Header1Data = [
         <br /> narratted by popular celebs of any custom voice
       </>
     ),
-    src: "/assets/black_audio.svg",
+    src: "/assets/solid_music.png",
   },
   {
     headline: (
@@ -31,7 +31,7 @@ export const Header1Data = [
         <br /> summaries.
       </>
     ),
-    src: "/assets/black_ai.svg",
+    src: "/assets/solid_ai.png",
   },
   {
     headline: (
@@ -47,7 +47,7 @@ export const Header1Data = [
         <br /> of your own insights.
       </>
     ),
-    src: "/assets/black_reading.svg",
+    src: "/assets/solid_reading.png",
   },
   {
     headline: (
@@ -63,7 +63,7 @@ export const Header1Data = [
       </>
     ),
 
-    src: "/assets/black_publication.svg",
+    src: "/assets/solid_publication.png",
   },
   {
     headline: (
@@ -80,7 +80,7 @@ export const Header1Data = [
       </>
     ),
 
-    src: "/assets/black_explore.svg",
+    src: "/assets/solid_explore.png",
   },
   {
     headline: (
@@ -95,7 +95,7 @@ export const Header1Data = [
         <br /> advanced AI technologes.
       </>
     ),
-    src: "/assets/black_image.svg",
+    src: "/assets/solid_image.png",
   },
 ];
 export const TeamData = [
@@ -120,7 +120,7 @@ export const TeamData = [
 ];
 export const RoadmapData = [
   {
-    imgSrc: "/assets/white_road1.svg",
+    imgSrc: "/assets/solid_road1.png",
     data: [
       { lineData: ["dummy", "dummy", "dummy"] },
       { lineData: ["dummy", "dummy", "dummy"] },
@@ -128,7 +128,7 @@ export const RoadmapData = [
     ],
   },
   {
-    imgSrc: "/assets/white_road2.svg",
+    imgSrc: "/assets/solid_road2.png",
     data: [
       { lineData: ["dummy", "dummy", "dummy"] },
       { lineData: ["dummy", "dummy", "dummy"] },

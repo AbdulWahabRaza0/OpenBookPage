@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "AuralNexus",
-  description: "LEARN MORE IN THE VOICES YOU LIKE|",
+  description: "LEARN MORE IN THE VOICES YOU LIKE.",
 };
 
 export default function RootLayout({

@@ -94,7 +94,6 @@ const MarqueeSlider = ({ children }: any) => {
         style={{ overflowY: "hidden" }}
         play={true}
         pauseOnHover={true}
-        // className={`bg-black `}
         gradient={false}
       >
         {children}
@@ -191,56 +190,6 @@ const SplitWrapper = ({ left, src, headline, text }: any) => {
     <>
       {!left ? (
         <>
-          {/* <Wrapper
-            width={isResponsive ? "100%" : "88.5%"}
-            className={`d-flex flex-row  align-items-center ${
-              isResponsive
-                ? "flex-wrap text-center justify-content-center"
-                : "gap-5 justify-content-between"
-            }`}
-          >
-            <Wrapper
-              data-aos="fade-left"
-              data-aos-duration="2000"
-              className={`d-flex flex-row align-items-center ${
-                isResponsive
-                  ? "justify-content-center "
-                  : "justify-content-start"
-              }`}
-            >
-              <Image
-                width="500px"
-                height="300px"
-                src={src}
-                alt="item"
-                className="img-fluid"
-              />
-            </Wrapper>
-            <Wrapper data-aos="fade-right" data-aos-duration="2000">
-              <Wrapper
-                mt={isResponsive ? "-13vh" : ""}
-                className={`d-flex flex-column justify-content-center ${
-                  isResponsive ? "text-center" : "text-end align-items-end"
-                }`}
-              >
-                <H1
-                  family="'Montserrat', sans-serif"
-                  fontSize={isResponsive ? "21px" : "41px"}
-                  lh={isResponsive ? "31px" : ""}
-                >
-                  {headline}
-                </H1>
-                <P
-                  className="mt-3"
-                  fontSize={isResponsive ? "" : "21px"}
-                  lHeight="31px"
-                >
-                  {text}
-                </P>
-              </Wrapper>
-            </Wrapper>
-          </Wrapper> */}
-
           <Wrapper className="container container-fluid">
             <Row
               className={`${
@@ -255,6 +204,7 @@ const SplitWrapper = ({ left, src, headline, text }: any) => {
                   data-aos="fade-right"
                   data-aos-duration="2000"
                   ms={isResponsive ? "" : "-25%"}
+                  mb={isResponsive ? "" : ""}
                 >
                   <Image
                     width="500px"
@@ -268,7 +218,7 @@ const SplitWrapper = ({ left, src, headline, text }: any) => {
               <Col md={6}>
                 <Wrapper data-aos="fade-left" data-aos-duration="2000">
                   <Wrapper
-                    mt={isResponsive ? "-13vh" : ""}
+                    mt={isResponsive ? "-90px" : ""}
                     className={`d-flex flex-column justify-content-end 
                   ${isResponsive ? "text-center" : "text-end align-items-end"}
                   `}

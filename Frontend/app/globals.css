@@ -20,23 +20,16 @@
 }
 
 body {
-  /* background: black !important; */
-  /* font-family: "Poppins", sans-serif; */
-  /* background-image: linear-gradient(
-    to bottom,
-    rgba(185, 93, 93, 0.2),
-    rgba(185, 93, 93, 0.4)
-  ) !important; */
-  /* background: linear-gradient(to left, #66302a, #f5edea, #66302a) !important; */
   width: 100%;
   min-height: 100vh;
   color: black !important;
-  -webkit-font-smoothing: antialiased; /* For Chrome, Safari, newer versions of Opera */
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-smooth: always;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 .text-orange {
   color: #db5c4d;
