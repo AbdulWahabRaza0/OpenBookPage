@@ -25,6 +25,7 @@
     "react-bootstrap": "^2.8.0",
     "react-dom": "^18.2.0",
     "react-fast-marquee": "^1.6.0",
+    "react-lottie": "^1.2.3",
     "react-responsive": "^9.0.2",
     "styled-components": "^6.0.4",
     "typescript": "^5.1.6",
@@ -32,6 +33,7 @@
   },
   "devDependencies": {
     "@types/aos": "^3.0.4",
-    "@types/node": "20.4.2"
+    "@types/node": "20.4.2",
+    "@types/react-lottie": "^1.2.6"
   }
 }

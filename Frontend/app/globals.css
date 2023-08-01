@@ -34,3 +34,10 @@ body {
 .text-orange {
   color: #db5c4d;
 }
+.lines-bg {
+  width: 100%;
+  background-image: url("/assets/lines.png"); /* Replace with your image URL */
+  background-size: cover; /* Adjust the image size to cover the element */
+  background-position: center center; /* Adjust the position of the image */
+  /* Other styles for your element */
+}

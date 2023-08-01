@@ -35,7 +35,7 @@ const Navbar = () => {
   });
   return (
     <React.Fragment>
-      <Wrapper width="100%">
+      <Wrapper width="100%" style={{ zIndex: 10000 }}>
         <Wrapper
           ps={isResponsive ? "30px" : "50px"}
           pe="3%"
@@ -46,7 +46,7 @@ const Navbar = () => {
             src="/assets/solid_logo.png"
             alt="playin logo"
             className="img-fluid"
-            width={240}
+            width={220}
             height={60}
           />
           <Wrapper

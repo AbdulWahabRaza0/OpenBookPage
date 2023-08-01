@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import { useMediaQuery } from "react-responsive";
-import { Col, Row,Image } from "react-bootstrap";
+import { Col, Row, Image } from "react-bootstrap";
 import Marquee from "react-fast-marquee";
 import Typewriter from "typewriter-effect";
 import { H1, P, SpanHeading, HeadingAlt } from "./Typography";
@@ -181,7 +181,7 @@ const ScrollWrapper = ({ children }: any) => {
     <WrapperContainer onWheel={scrollHandler}>{children}</WrapperContainer>
   );
 };
-const SplitWrapper = ({ left, src, headline, text }: any) => {
+const SplitWrapper = ({ left, src, headline, text, index }: any) => {
   const isResponsive = useMediaQuery({
     query: "(max-width: 752px)",
   });
@@ -189,7 +189,10 @@ const SplitWrapper = ({ left, src, headline, text }: any) => {
     <>
       {!left ? (
         <>
-          <Wrapper className="container container-fluid">
+          <Wrapper
+            className="container container-fluid"
+            style={{ overflow: "hidden" }}
+          >
             <Row
               className={`${
                 isResponsive
@@ -210,14 +213,15 @@ const SplitWrapper = ({ left, src, headline, text }: any) => {
                     height="500px"
                     src={src}
                     alt="item"
-                    className="img-fluid"
+                    className="img-fluid rotate-image"
                   />
                 </Wrapper>
               </Col>
-              <Col md={6}>
+              <Col md={6} style={{ position: "relative" }}>
                 <Wrapper data-aos="fade-left" data-aos-duration="2000">
                   <Wrapper
                     mt={isResponsive ? "-90px" : ""}
+                    pb={isResponsive ? "90px" : ""}
                     className={`d-flex flex-column justify-content-end 
                   ${isResponsive ? "text-center" : "text-end align-items-end"}
                   `}
@@ -241,69 +245,32 @@ const SplitWrapper = ({ left, src, headline, text }: any) => {
                     </P>
                   </Wrapper>
                 </Wrapper>
+                {(isResponsive || index === 4) && (
+                  <Image
+                    style={{
+                      position: "absolute",
+                      top: isResponsive ? "0%" : "-60%",
+                      left: isResponsive ? "-5%" : "0%",
+                      width: isResponsive ? "100%" : "200%",
+                      height: isResponsive ? "100%" : "200%",
+                      opacity: isResponsive ? "0.4" : "0.4",
+                      zIndex: 1,
+                    }}
+                    className="img-fluid"
+                    src="/assets/shade.png"
+                    alt="background"
+                  />
+                )}
               </Col>
             </Row>
           </Wrapper>
         </>
       ) : (
         <>
-          {" "}
-          {/* <Wrapper
-            width={isResponsive ? "100%" : "100%"}
-            className={`d-flex flex-row align-items-center ${
-              isResponsive
-                ? "flex-wrap-reverse justify-content-center text-center"
-                : "justify-content-between"
-            }`}
+          <Wrapper
+            className="container container-fluid"
+            style={{ zIndex: 1000 }}
           >
-            <Wrapper
-              data-aos="fade-left"
-              data-aos-duration="2000"
-              className={`d-flex flex-row align-items-center  ${
-                isResponsive
-                  ? "justify-content-center text-center"
-                  : "justify-content-end"
-              }`}
-            >
-              <Wrapper
-                mt={isResponsive ? "-13vh" : ""}
-                ps={isResponsive ? "" : "170px"}
-                className={`d-flex flex-column justify-content-center gap-2 ${
-                  isResponsive
-                    ? "text-center align-items-center"
-                    : "text-start align-items-start"
-                }`}
-              >
-                <H1
-                  family="'Montserrat', sans-serif"
-                  fontSize={isResponsive ? "21px" : "41px"}
-                  lh={isResponsive ? "31px" : ""}
-                >
-                  {headline}
-                </H1>
-                <P fontSize={isResponsive ? "" : "21px"}>{text}</P>
-              </Wrapper>
-            </Wrapper>
-            <Wrapper
-              data-aos="fade-right"
-              data-aos-duration="2000"
-              // me={isResponsive ? "" : "2%"}
-              className={`d-flex flex-row align-items-center ${
-                isResponsive
-                  ? "justify-content-center flex-wrap"
-                  : "justify-content-end"
-              }`}
-            >
-              <Image
-                width="500px"
-                height="300px"
-                src={src}
-                alt="item"
-                className="img-fluid"
-              />
-            </Wrapper>
-          </Wrapper> */}
-          <Wrapper className="container container-fluid">
             <Row
               className={`${
                 isResponsive
@@ -311,11 +278,12 @@ const SplitWrapper = ({ left, src, headline, text }: any) => {
                   : "align-items-center justify-content-center"
               } `}
             >
-              <Col md={6} lg={6} xl={6}>
+              <Col md={6} lg={6} xl={6} style={{ position: "relative" }}>
                 <Wrapper
                   data-aos="fade-right"
                   data-aos-duration="2000"
                   mt={isResponsive ? "-13vh" : ""}
+                  pb={isResponsive ? "100px" : ""}
                   className={`d-flex flex-column justify-content-start ${
                     isResponsive
                       ? "text-center"
@@ -340,6 +308,22 @@ const SplitWrapper = ({ left, src, headline, text }: any) => {
                     {text}
                   </P>
                 </Wrapper>
+                {index === 1 && !isResponsive && (
+                  <Image
+                    style={{
+                      position: "absolute",
+                      bottom: "-45%",
+                      width: "100%",
+                      height: "100%",
+                      left: "-30%",
+                      zIndex: 1,
+                      opacity: "0.8",
+                    }}
+                    src="/assets/snake.png"
+                    alt={"snake"}
+                    className="img-fluid"
+                  />
+                )}
               </Col>
               <Col md={6} lg={6} xl={6}>
                 <Wrapper
@@ -359,7 +343,7 @@ const SplitWrapper = ({ left, src, headline, text }: any) => {
                     height="500px"
                     src={src}
                     alt="item"
-                    className="img-fluid"
+                    className="img-fluid rotate-image"
                   />
                 </Wrapper>
               </Col>

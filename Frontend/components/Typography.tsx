@@ -28,6 +28,7 @@ const marqueeAnimationSecondary = keyframes`
   to { transform: translateX(0); }
 `;
 const H1 = styled.h1<Props>`
+  z-index: 100;
   font-style: normal;
   font-weight: ${(props) => props.weight && props.weight};
   line-height: ${(props) => props.lHeight && props.lHeight};

@@ -12,8 +12,6 @@ import {
   SplitWrapper,
   HeadingComp,
   MarqueeComp,
-  Row,
-  Col,
 } from "@/components/Layout";
 import { Spacer } from "@/components/Spacer";
 import { H1, P } from "@/components/Typography";
@@ -26,6 +24,7 @@ import {
   RoadmapData,
   ResponsiveRoadMapData,
 } from "../utils";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -71,10 +70,10 @@ export default function Home() {
   };
   return (
     mount && (
-      <ScrollWrapper id="home">
+      <ScrollWrapper id="home" style={{ width: "100%" }}>
         <Wrapper bg="#f5f5f5">
           <Navbar />
-          <Wrapper id="about" width="100%">
+          <Wrapper id="about" width="100%" style={{ overflowX: "hidden" }}>
             <Container pt="40px">
               <Wrapper
                 height="auto"
@@ -122,6 +121,22 @@ export default function Home() {
                         text={"LEARN MORE IN THE VOICES YOU LIKE"}
                       />
                     </H1>
+                    {!isResponsive && (
+                      <Image
+                        style={{
+                          position: "absolute",
+                          bottom: "0%",
+                          width: "100%",
+                          height: "100%",
+                          left: "0.01%",
+                          zIndex: 0,
+                          opacity: "0.2",
+                        }}
+                        src="/assets/snake.png"
+                        alt={"snake"}
+                        className="img-fluid"
+                      />
+                    )}
                   </Wrapper>
                 </Wrapper>
               </Wrapper>
@@ -194,17 +209,21 @@ export default function Home() {
                 }
               />
             </Wrapper>
-            <Wrapper>
+            <Wrapper position="relative" style={{ overflow: "hidden" }}>
               {Header1Data.map((val, index) => {
                 return (
                   <>
                     <Wrapper key={index}>
-                      <Wrapper bg={index % 2 === 0 ? "#f8f8f8" : "#f5f5f5"}>
+                      <Wrapper
+                        bg={index % 2 === 0 ? "#f8f8f8" : "#f5f5f5"}
+                        position="relative"
+                      >
                         <SplitWrapper
                           left={index % 2 ? true : false}
                           src={val.src}
                           headline={val.headline}
                           text={val.text}
+                          index={index}
                         />
                       </Wrapper>
                     </Wrapper>
@@ -301,8 +320,12 @@ export default function Home() {
           <Wrapper data-aos="flip-left" data-aos-duration="2000">
             <PrimaryButton
               transform={true}
-              fontSize="21px"
+              width={isResponsive ? "200px" : "375px"}
+              height={isResponsive ? "58px" : "75px"}
+              fontSize={isResponsive ? "21px" : "27px"}
+              fontColor="white"
               onClick={handleButtonClick}
+              heartbeat={true}
             >
               Visit now
             </PrimaryButton>
@@ -339,7 +362,7 @@ export default function Home() {
                                     return (
                                       <>
                                         <Wrapper
-                                          fontColor="white !important"
+                                          fontColor="black !important"
                                           data-aos="flip-up"
                                           data-aos-duration={(
                                             2000 *
@@ -443,9 +466,13 @@ export default function Home() {
             </Wrapper>
           </Container>
         </Wrapper>
-        <Wrapper bg="#f8f8f8">
+        <Wrapper bg="#f8f8f8" position="relative">
           <Container>
-            <Wrapper id="team" mt={isResponsive ? "5vh" : "5%"}>
+            <Wrapper
+              id="team"
+              mt={isResponsive ? "5vh" : "5%"}
+              style={{ position: "relative" }}
+            >
               <Wrapper className="d-flex flex-row align-items-center justify-content-center">
                 <Wrapper data-aos="fade-down" data-aos-duration="2000">
                   <HeadingComp
@@ -458,6 +485,22 @@ export default function Home() {
                   />
                 </Wrapper>
               </Wrapper>
+              {!isResponsive && (
+                <Image
+                  style={{
+                    width: "60%",
+                    height: "70%",
+                    position: "absolute",
+                    zIndex: "0",
+                    opacity: 0.2,
+                    bottom: "25%",
+                    left: 0,
+                  }}
+                  src="/assets/lines.png"
+                  alt="lines"
+                  className="img-fluid"
+                />
+              )}
               <Wrapper>
                 <Wrapper
                   className={`d-flex flex-row align-items-center  ${
@@ -465,6 +508,8 @@ export default function Home() {
                       ? "gap-3 justify-content-center flex-wrap"
                       : "justify-content-center gap-1"
                   }`}
+                  position="relative"
+                  style={{ overflowX: "hidden" }}
                 >
                   {TeamData.map((val, index) => {
                     return (
@@ -527,11 +572,14 @@ export default function Home() {
               pt="10%"
               id="contact"
               className="d-flex flex-column align-items-center justify-content-center gap-3"
+              position="relative"
+              style={{ zIndex: 1, overflow: "hidden" }}
             >
               <Wrapper
                 mt={isResponsive ? "5vh" : ""}
                 data-aos="fade-down"
                 data-aos-duration="2000"
+                position="relative"
               >
                 <HeadingComp
                   heading={
@@ -592,17 +640,36 @@ export default function Home() {
                   height={isResponsive ? "50px" : ""}
                   fontSize="21px"
                   transform={true}
+                  heartbeat={false}
                   onClick={() => doContact()}
                 >
                   Submit
                 </PrimaryButton>
               </Wrapper>
             </Wrapper>
+
             <Spacer height="40px" />
           </Container>
+          {!isResponsive && (
+            <Image
+              style={{
+                position: "absolute",
+                bottom: "-25%",
+                right: "-20%",
+                width: "50%",
+                height: "60%",
+                opacity: "0.2",
+                zIndex: 0,
+              }}
+              className="img-fluid"
+              src="/assets/circle.png"
+              alt="background"
+            />
+          )}
         </Wrapper>
-        <Wrapper bg="#f8f8f8">
-          <Wrapper bg="#100f0f">
+
+        <Wrapper bg="#f8f8f8" position="relative" style={{ zIndex: 1 }}>
+          <Wrapper bg="#100f0f" style={{ zIndex: 100 }}>
             <Container>
               <Wrapper id="footer">
                 <Wrapper width="100%" height="0.5px" bg="white"></Wrapper>
@@ -614,31 +681,29 @@ export default function Home() {
                     height="120px"
                   />
                   <Wrapper className="d-flex flex-row align-items-center justify-content-center gap-3">
-                    {[
-                      "/assets/solid_app.png",
-                      "",
-                      "/assets/solid_play.png",
-                    ].map((val, index) => {
-                      return (
-                        <>
-                          {index === 1 ? (
-                            <>
-                              <LinkedInIcon
-                                style={{ fontSize: "25px", color: "white" }}
+                    {["/assets/app1.svg", "", "/assets/app2.svg"].map(
+                      (val, index) => {
+                        return (
+                          <>
+                            {index === 1 ? (
+                              <>
+                                <LinkedInIcon
+                                  style={{ fontSize: "25px", color: "white" }}
+                                />
+                              </>
+                            ) : (
+                              <Image
+                                key={index}
+                                src={val}
+                                alt="app store"
+                                width="25px"
+                                height="25px"
                               />
-                            </>
-                          ) : (
-                            <Image
-                              key={index}
-                              src={val}
-                              alt="app store"
-                              width="25px"
-                              height="25px"
-                            />
-                          )}
-                        </>
-                      );
-                    })}
+                            )}
+                          </>
+                        );
+                      }
+                    )}
                   </Wrapper>
                   <Wrapper
                     width="100%"
