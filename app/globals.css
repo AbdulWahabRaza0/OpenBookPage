@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap");
+@import url("https://db.onlinewebfonts.com/c/9475d6a0b79c164f9f605673714e75d9?family=Circular+Std+Medium");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+@font-face {
+  font-family: "Organeto";
+  src: url("/assets/fonts/Organitto/Organetto-RegularExp.ttf")
+    format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Nekst";
+  src: url("/assets/fonts/Nekst/Nekst-Medium.otf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  color: black !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: always;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+.text-orange {
+  color: #db5c4d;
+}
+.lines-bg {
+  width: 100%;
+  background-image: url("/assets/lines.png"); /* Replace with your image URL */
+  background-size: cover; /* Adjust the image size to cover the element */
+  background-position: center center; /* Adjust the position of the image */
+  /* Other styles for your element */
+}

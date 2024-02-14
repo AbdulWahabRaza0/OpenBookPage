@@ -1,0 +1,378 @@
+import styled, { css } from "styled-components";
+import { useMediaQuery } from "react-responsive";
+import { Col, Row, Image } from "react-bootstrap";
+import Marquee from "react-fast-marquee";
+import Typewriter from "typewriter-effect";
+import { H1, P, SpanHeading, HeadingAlt } from "./Typography";
+interface WrapperProps {
+  width?: string;
+  border?: string;
+  borderRadius?: string;
+  height?: string;
+  fontSize?: string;
+  weight?: string;
+  bg?: string;
+  fontColor?: string;
+  hoverBg?: string;
+  ms?: string;
+  me?: string;
+  mt?: string;
+  mb?: string;
+  ps?: string;
+  pe?: string;
+  pt?: string;
+  pb?: string;
+  p?: string;
+  zIndex?: any;
+  ls?: string;
+  lHeight?: string;
+  position?: string;
+  top?: any;
+  family?: string;
+  transition?: boolean;
+  gradient?: boolean;
+}
+
+const Wrapper = styled.div<WrapperProps>`
+  width: ${(props) => (props.width ? props.width : "")};
+  height: ${(props) => (props.height ? props.height : "")};
+  border: ${(props) => (props.border ? props.border : "")};
+  font-weight: ${(props) => (props.weight ? props.weight : "")};
+  font-size: ${(props) => (props.fontSize ? props.fontSize : "16px")};
+  border-radius: ${(props) => (props.borderRadius ? props.borderRadius : "")};
+  background: ${(props) => (props.bg ? props.bg : "")};
+  color: ${(props) => (props.fontColor ? props.fontColor : "")};
+  margin-left: ${(props) => (props.ms ? props.ms : "")};
+  margin-right: ${(props) => (props.me ? props.me : "")};
+  margin-top: ${(props) => (props.mt ? props.mt : "")};
+  margin-bottom: ${(props) => (props.mb ? props.mb : "")};
+  padding-left: ${(props) => (props.ps ? props.ps : "")};
+  padding-right: ${(props) => (props.pe ? props.pe : "")};
+  padding-top: ${(props) => (props.pt ? props.pt : "")};
+  padding-bottom: ${(props) => (props.pb ? props.pb : "")};
+  padding: ${(props) => (props.p ? props.p : "")};
+  letter-spacing: ${(props) => (props.ls ? props.ls : "")};
+  z-index: ${(props) => props.zIndex && props.zIndex};
+  position: ${(props) => props.position && props.position};
+  line-height: ${(props) => props.lHeight && props.lHeight};
+  background: ${(props) => props.bg && props.bg};
+  transition: ${(props) => props.transition && "background-color 0.5s ease"};
+  background-image: ${(props) =>
+    props.gradient && "radial-gradient(circle, #66302a, black)"};
+  font-family: ${(props) =>
+    props.family ? props.family : "'Organeto','sans-serif'"};
+  top: ${(props) => props.top && props.top};
+  &:hover {
+    background: ${(props) => props.hoverBg && props.hoverBg};
+  }
+`;
+const Container = ({ children, pt }: any) => {
+  return (
+    <>
+      <Wrapper ps="5vw" pe="5vw" pt={pt ? pt : "5%"} pb="1%">
+        {children}
+      </Wrapper>
+    </>
+  );
+};
+const TypeWriterComp = ({ text }: any) => {
+  return (
+    <>
+      <Typewriter
+        options={{
+          strings: text,
+          autoStart: true,
+          loop: true,
+          delay: 100,
+        }}
+
+        // onInit={(typewriter) => {
+        //   typewriter.typeString(text).changeDelay(100).start();
+        // }}
+      />
+    </>
+  );
+};
+const MarqueeSlider = ({ children }: any) => {
+  return (
+    <>
+      <Marquee
+        style={{ overflowY: "hidden" }}
+        play={true}
+        pauseOnHover={true}
+        gradient={false}
+      >
+        {children}
+      </Marquee>
+    </>
+  );
+};
+
+const MarqueeContainer = styled.div`
+  position: relative;
+  width: 100vw;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-left: 50vw;
+`;
+interface Scrollprops {
+  relative?: any;
+}
+const WrapperContainer = styled.div<Scrollprops>`
+  background: black;
+
+  ${(props) =>
+    props.relative &&
+    css`
+      position: relative;
+    `}
+`;
+const MarqueeComp = () => {
+  return (
+    <>
+      <SpanHeading>Articles Voiced by Icons</SpanHeading> -{" "}
+      <HeadingAlt green>Quick AI Abstracts</HeadingAlt> -{" "}
+      <SpanHeading>Perfecting Editorial Pieces</SpanHeading> -{" "}
+      <HeadingAlt green>Showcasing Publications</HeadingAlt> -{" "}
+      <SpanHeading>Explore Engaging Content</SpanHeading> -
+    </>
+  );
+};
+const HeadingComp = ({ heading }: any) => {
+  const isResponsive = useMediaQuery({
+    query: "(max-width: 752px)",
+  });
+  return (
+    <>
+      <H1
+        className={isResponsive ? "mb-0 text-center" : "text-center mb-5"}
+        fontSize={isResponsive ? "31px" : "3.1vw"}
+        lh={isResponsive ? "41px" : "3.5vw"}
+        color="#db5c4d"
+        family="'Montserrat', sans-serif"
+        weight="700"
+      >
+        {heading}
+      </H1>
+    </>
+  );
+};
+const ScrollWrapper = ({ children }: any) => {
+  const scrollHandler = () => {
+    const hr_scrollables: any =
+      document.getElementsByClassName("scrollable-hr");
+    const vr_scrollables: any =
+      document.getElementsByClassName("scrollable-vr");
+
+    for (const element of hr_scrollables) {
+      const rect = element.getBoundingClientRect();
+      const inView =
+        rect.top >= 0 &&
+        rect.bottom <=
+          (window.innerHeight || document.documentElement.clientHeight);
+
+      if (!inView) continue;
+
+      let progress = (window.innerHeight - rect.top) / window.innerHeight;
+
+      const width = element.scrollWidth;
+
+      const scrollPosition = progress * width;
+
+      element.scrollLeft = scrollPosition;
+    }
+  };
+
+  return (
+    <WrapperContainer onWheel={scrollHandler}>{children}</WrapperContainer>
+  );
+};
+const SplitWrapper = ({ left, src, headline, text, index }: any) => {
+  const isResponsive = useMediaQuery({
+    query: "(max-width: 752px)",
+  });
+  return (
+    <>
+      {!left ? (
+        <>
+          <Wrapper
+            className="container container-fluid"
+            style={{ overflow: "hidden" }}
+          >
+            <Row
+              className={`${
+                isResponsive
+                  ? "align-items-center justify-content-center"
+                  : "align-items-center justify-content-center"
+              }`}
+            >
+              <Col md={6} lg={6} xl={6}>
+                {" "}
+                <Wrapper
+                  data-aos="fade-right"
+                  data-aos-duration="2000"
+                  ms={isResponsive ? "" : "-25%"}
+                  mb={isResponsive ? "" : ""}
+                >
+                  <Image
+                    width="500px"
+                    height="500px"
+                    src={src}
+                    alt="item"
+                    className="img-fluid rotate-image"
+                  />
+                </Wrapper>
+              </Col>
+              <Col md={6} style={{ position: "relative" }}>
+                <Wrapper data-aos="fade-left" data-aos-duration="2000">
+                  <Wrapper
+                    mt={isResponsive ? "-90px" : ""}
+                    pb={isResponsive ? "90px" : ""}
+                    className={`d-flex flex-column justify-content-end 
+                  ${isResponsive ? "text-center" : "text-end align-items-end"}
+                  `}
+                  >
+                    <H1
+                      family="'Montserrat', sans-serif"
+                      fontSize={isResponsive ? "21px" : "41px"}
+                      lh={isResponsive ? "31px" : ""}
+                      weight="700"
+                      color="black"
+                    >
+                      {headline}
+                    </H1>
+                    <P
+                      className="mt-3"
+                      fontSize={isResponsive ? "" : "21px"}
+                      lHeight="31px"
+                      color="gray"
+                    >
+                      {text}
+                    </P>
+                  </Wrapper>
+                </Wrapper>
+                {(isResponsive || index === 4) && (
+                  <Image
+                    style={{
+                      position: "absolute",
+                      top: isResponsive ? "0%" : "-60%",
+                      left: isResponsive ? "-5%" : "0%",
+                      width: isResponsive ? "100%" : "200%",
+                      height: isResponsive ? "100%" : "200%",
+                      opacity: isResponsive ? "0.4" : "0.4",
+                      zIndex: 1,
+                    }}
+                    className="img-fluid"
+                    src="/assets/shade.png"
+                    alt="background"
+                  />
+                )}
+              </Col>
+            </Row>
+          </Wrapper>
+        </>
+      ) : (
+        <>
+          <Wrapper
+            className="container container-fluid"
+            style={{ zIndex: 1000 }}
+          >
+            <Row
+              className={`${
+                isResponsive
+                  ? "align-items-center justify-content-center flex-wrap-reverse"
+                  : "align-items-center justify-content-center"
+              } `}
+            >
+              <Col md={6} lg={6} xl={6} style={{ position: "relative" }}>
+                <Wrapper
+                  data-aos="fade-right"
+                  data-aos-duration="2000"
+                  mt={isResponsive ? "-13vh" : ""}
+                  pb={isResponsive ? "100px" : ""}
+                  className={`d-flex flex-column justify-content-start ${
+                    isResponsive
+                      ? "text-center"
+                      : "text-start align-items-start"
+                  }`}
+                >
+                  <H1
+                    family="'Montserrat', sans-serif"
+                    fontSize={isResponsive ? "21px" : "41px"}
+                    lh={isResponsive ? "31px" : ""}
+                    weight="700"
+                    color="black"
+                  >
+                    {headline}
+                  </H1>
+                  <P
+                    className="mt-3"
+                    fontSize={isResponsive ? "" : "21px"}
+                    lHeight="31px"
+                    color="gray"
+                  >
+                    {text}
+                  </P>
+                </Wrapper>
+                {index === 1 && !isResponsive && (
+                  <Image
+                    style={{
+                      position: "absolute",
+                      bottom: "-45%",
+                      width: "100%",
+                      height: "100%",
+                      left: "-30%",
+                      zIndex: 1,
+                      opacity: "0.8",
+                    }}
+                    src="/assets/snake.png"
+                    alt={"snake"}
+                    className="img-fluid"
+                  />
+                )}
+              </Col>
+              <Col md={6} lg={6} xl={6}>
+                <Wrapper
+                  width="100%"
+                  data-aos="fade-left"
+                  data-aos-duration="2000"
+                  me={isResponsive ? "" : "-120px"}
+                  ms={isResponsive ? "" : "120px"}
+                  className={`d-flex flex-row align-items-center ${
+                    isResponsive
+                      ? "justify-content-center"
+                      : "justify-content-end"
+                  }`}
+                >
+                  <Image
+                    width="500px"
+                    height="500px"
+                    src={src}
+                    alt="item"
+                    className="img-fluid rotate-image"
+                  />
+                </Wrapper>
+              </Col>
+            </Row>
+          </Wrapper>
+        </>
+      )}
+    </>
+  );
+};
+export {
+  Wrapper,
+  useMediaQuery,
+  MarqueeSlider,
+  Row,
+  Col,
+  Container,
+  TypeWriterComp,
+  Image,
+  MarqueeContainer,
+  ScrollWrapper,
+  SplitWrapper,
+  MarqueeComp,
+  HeadingComp,
+};
