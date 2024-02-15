@@ -9,11 +9,18 @@ export const Header1Data = [
     ),
     text: (
       <>
-        Listen to your articles published on 100 <br /> of reputable websites &
-        auralnexus
-        <br /> narratted by popular celebrities of any custom voice
+        Ditch the screen & hear top articles from 100+
+        <br /> sites come alive in the voices
+        <br /> of celebrities or your own custom creation!
       </>
     ),
+    // text: (
+    //   <>
+    //     Listen to your articles published on 100 <br /> of reputable websites &
+    //     auralnexus
+    //     <br /> narrated by popular celebrities of any custom voice
+    //   </>
+    // ),
     src: "/assets/solid_music.png",
   },
   {
@@ -26,11 +33,17 @@ export const Header1Data = [
     ),
     text: (
       <>
-        Enter any article and recieve
-        <br /> three types of AI generated
-        <br /> summaries.
+        Unlock rich, multi-level
+        <br /> summaries powered by AI
       </>
     ),
+    // text: (
+    //   <>
+    //     Enter any article and recieve
+    //     <br /> three types of AI generated
+    //     <br /> summaries.
+    //   </>
+    // ),
     src: "/assets/solid_ai.png",
   },
   {
@@ -42,11 +55,17 @@ export const Header1Data = [
     ),
     text: (
       <>
-        Super impose AI generated
-        <br /> summaries, with the touch
-        <br /> of your own insights.
+        AI Drafts, You Craft: Perfect
+        <br /> Summaries with Human Insight.
       </>
     ),
+    // text: (
+    //   <>
+    //     Super impose AI generated
+    //     <br /> summaries, with the touch
+    //     <br /> of your own insights.
+    //   </>
+    // ),
     src: "/assets/solid_reading.png",
   },
   {
@@ -72,13 +91,20 @@ export const Header1Data = [
         <br /> Content
       </>
     ),
+
     text: (
       <>
-        Empower your writing with AI generated
-        <br /> responses for unique and
-        <br /> engaging articles.
+        Say Goodbye to Writer's
+        <br /> Block: AI Assists with Articles
       </>
     ),
+    // text: (
+    //   <>
+    //     Empower your writing with AI generated
+    //     <br /> responses for unique and
+    //     <br /> engaging articles.
+    //   </>
+    // ),
 
     src: "/assets/solid_explore.png",
   },
@@ -91,10 +117,16 @@ export const Header1Data = [
     ),
     text: (
       <>
-        Auralnexus creates captivating <br /> images for your articles using{" "}
-        <br /> advanced AI technologes.
+        Make Your Articles Pop!
+        <br /> Eye-catching AI Thumbnails.
       </>
     ),
+    // text: (
+    //   <>
+    //     Auralnexus creates captivating <br /> images for your articles using{" "}
+    //     <br /> advanced AI technologes.
+    //   </>
+    // ),
     src: "/assets/solid_image.png",
   },
 ];

@@ -67,7 +67,7 @@ export default function Home() {
     setMount(true);
   }, []);
   const handleButtonClick = () => {
-    const url = "https://open-book-frontend.vercel.app/";
+    const url = "https://app.auralnexus.com/";
     window.open(url, "_blank");
   };
   return (
@@ -296,10 +296,7 @@ export default function Home() {
                       <Wrapper
                         style={{ cursor: "pointer" }}
                         onClick={() => {
-                          window.open(
-                            "https://open-book-frontend.vercel.app/",
-                            "_blank"
-                          );
+                          window.open("https://app.auralnexus.com/", "_blank");
                         }}
                       >
                         <Image
@@ -313,10 +310,7 @@ export default function Home() {
                       <Wrapper
                         style={{ cursor: "pointer" }}
                         onClick={() => {
-                          window.open(
-                            "https://open-book-frontend.vercel.app/",
-                            "_blank"
-                          );
+                          window.open("https://app.auralnexus.com/", "_blank");
                         }}
                       >
                         <Image
@@ -376,7 +370,7 @@ export default function Home() {
                             );
                           } else if (index === 1) {
                             window.open(
-                              "https://open-book-frontend.vercel.app/",
+                              "https://app.auralnexus.com/",
                               " _blank"
                             );
                           }
