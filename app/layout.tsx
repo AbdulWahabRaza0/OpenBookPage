@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <title>Auralnexus</title>
-        <link rel="shortcut icon" href="/assets/logo.svg" type="image/x-icon" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
       </head>
       <body className={inter.className}>{children}</body>
     </html>
