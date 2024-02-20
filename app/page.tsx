@@ -451,7 +451,7 @@ export default function Home() {
                     <Wrapper position="relative">
                       <Image
                         className="img-fluid"
-                        src="/assets/roadmap_mob.png"
+                        src="/assets/solid_road.png"
                         alt="roadmap"
                       />
                     </Wrapper>
